@@ -1,9 +1,10 @@
+import NavBar from "@/components/shared/NavBar";
 import Image from "next/image";
 
 export default function Home() {
   return (
     <div>
-      <h1>Best services for Frontend Application</h1>
+      <NavBar />
     </div>
   );
 }
