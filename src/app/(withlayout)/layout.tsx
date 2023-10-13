@@ -1,10 +1,12 @@
+import AdminHeader from "@/components/view/Header/AdminHeader";
+import AdminSidebar from "@/components/view/Sidebar/AdminSidebar";
 import { Button } from "antd";
 
-const DashboardLayout = () => {
+const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <div>
-      <h2>Dashboard Layout</h2>
-      <Button type="primary">My Button</Button>
+      <AdminHeader />
+      <AdminSidebar> {children} </AdminSidebar>
     </div>
   );
 };
