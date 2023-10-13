@@ -2,6 +2,7 @@ import StyledComponentsRegistry from "@/lib/AntdRegistry";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import Providers from "@/lib/Providers";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,10 +17,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <StyledComponentsRegistry>
-        <body className={inter.className}>{children}</body>
-      </StyledComponentsRegistry>
-    </html>
+    <Providers>
+      <html lang="en">
+        <body>{children}</body>
+      </html>
+    </Providers>
   );
 }
