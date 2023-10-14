@@ -1,6 +1,6 @@
 "use client";
-import { Col, Input, Row } from "antd";
-import bannerImg from "../../../assets/banner.png";
+import { Button, Col, Input, Row } from "antd";
+import bannerImg from "../../../assets/banner-2.png";
 import Image from "next/image";
 
 const Banner = () => {
@@ -14,8 +14,15 @@ const Banner = () => {
           <p style={{ margin: "15px 0" }}>
             We are develop yourself consistently
           </p>
-          <div style={{}}>
-            <Input placeholder="Search..." />;
+          <div style={{ display: "flex", overflow: "hidden" }}>
+            <Input placeholder="Search..." />
+            <Button
+              type="primary"
+              className="hover:bg-red-400"
+              style={{ background: "#FE4A55" }}
+            >
+              Search
+            </Button>
           </div>
         </div>
 

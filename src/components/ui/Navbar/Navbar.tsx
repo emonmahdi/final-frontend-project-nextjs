@@ -36,7 +36,7 @@ const Navbar = ({
         <Content>
           <Link href="/">
             <Title level={3} style={{ color: "white", marginBottom: 0 }}>
-              My Service
+              Hostil
             </Title>
           </Link>
         </Content>
@@ -55,6 +55,7 @@ const Navbar = ({
             );
           })}
         </Menu>
+        <Link href="/login">Login</Link>
         <Button onClick={showDrawer} type="primary" className="lg:hidden">
           <MenuOutlined />
         </Button>

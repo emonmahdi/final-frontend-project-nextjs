@@ -7,9 +7,11 @@ const PublicHeader = () => {
     { key: "2", label: "About", href: "/about-us" },
     { key: "3", label: "Contact", href: "/contact" },
   ];
-  return <div>
+  return (
+    <div>
       <Navbar items={items} />
-  </div>;
+    </div>
+  );
 };
 
 export default PublicHeader;

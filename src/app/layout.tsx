@@ -1,11 +1,8 @@
-import StyledComponentsRegistry from "@/lib/AntdRegistry";
 import "./globals.css";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import Providers from "@/lib/Providers";
-import Navbar from "@/components/ui/Navbar/Navbar";
-
-const inter = Inter({ subsets: ["latin"] });
+import Features from "@/components/home/Features/Features";
+import Banner from "@/components/home/Banner/Banner";
 
 export const metadata: Metadata = {
   title: "Best Services Application",
