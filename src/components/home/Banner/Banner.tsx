@@ -1,6 +1,6 @@
 "use client";
 import { Button, Col, Input, Row } from "antd";
-import bannerImg from "../../../assets/banner-2.png";
+import bannerImg from "../../../assets/banner-3.png";
 import Image from "next/image";
 
 const Banner = () => {
@@ -8,11 +8,11 @@ const Banner = () => {
     <div className="banner-section">
       <div className="flex flex-col md:flex-row items-center">
         <div className="w-full md:w-1/2 p-4">
-          <h1 className="text-5xl font-bold ">
-            Build Skills With Experts Any Time, Anywhere
-          </h1>
+          <h1 className="text-5xl font-bold ">Enjoy Your Vacation.</h1>
           <p style={{ margin: "15px 0" }}>
-            We are develop yourself consistently
+            Hotel ut nisl quam nestibulum ac quam nec odio elementum sceisuen
+            the aucan ligula. mus nellentesque habitant forminy morbine odio
+            elementum sceisuen the aucan ligula mus nellentesque morbine .
           </p>
           <div style={{ display: "flex", overflow: "hidden" }}>
             <Input placeholder="Search..." />

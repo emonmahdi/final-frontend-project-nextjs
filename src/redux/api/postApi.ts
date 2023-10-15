@@ -7,11 +7,17 @@ export const postApi = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:5000/" }),
   endpoints: (builder) => ({
     getPostData: builder.query({
-      query: () => "/courses",
+      query: () => "hotels",
+    }),
+    singlePostData: builder.query({
+      query: (id) => ({
+        url: `hotel/${id}`,
+        method: "GET",
+      }),
     }),
   }),
 });
 
 // Export hooks for usage in functional components, which are
 // auto-generated based on the defined endpoints
-export const { useGetPostDataQuery } = postApi;
+export const { useGetPostDataQuery, useSinglePostDataQuery } = postApi;

@@ -6,6 +6,9 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { MenuOutlined } from "@ant-design/icons";
 import { useState } from "react";
+import auth from "@/firebase/firebase.auth";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { useSignOut } from "react-firebase-hooks/auth";
 
 const { Header } = Layout;
 
@@ -21,6 +24,21 @@ const Navbar = ({
   const pathname = usePathname();
 
   const [open, setOpen] = useState(false);
+
+  const [user, loading, error] = useAuthState(auth);
+
+  const [signOut, logoutLoading, logoutError] = useSignOut(auth);
+
+  if (error) {
+    return (
+      <div>
+        <p>Error: {error.message}</p>
+      </div>
+    );
+  }
+  if (loading) {
+    return <p>Loading...</p>;
+  }
 
   const showDrawer = () => {
     setOpen(true);
@@ -55,7 +73,22 @@ const Navbar = ({
             );
           })}
         </Menu>
-        <Link href="/login">Login</Link>
+
+        {!user ? (
+          <Link href="/login">
+            <Button type="primary">Login</Button>
+          </Link>
+        ) : (
+          <Button
+            onClick={async () => {
+              await signOut();
+            }}
+            danger
+          >
+            Log Out
+          </Button>
+        )}
+
         <Button onClick={showDrawer} type="primary" className="lg:hidden">
           <MenuOutlined />
         </Button>

@@ -13,13 +13,17 @@ const Features = () => {
       }}
     >
       <h2 style={{ textAlign: "center" }}>This is Features Service</h2>
-      {data?.data.map((product: any) => {
-        return (
-          <div key={product.id} className="flex flex-wrap justify-center">
-            <ProductCard product={product} />
-          </div>
-        );
-      })}
+      <div className="container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        {data?.data.map((product: any) => {
+          return (
+            <ProductCard
+              key={product._id}
+              params={product._id}
+              product={product}
+            />
+          );
+        })}
+      </div>
     </div>
   );
 };
