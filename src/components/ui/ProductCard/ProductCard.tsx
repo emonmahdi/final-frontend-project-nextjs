@@ -10,9 +10,9 @@ const ProductCard = ({ product }: any) => {
   const { _id, title, images, description, price, guest, bed } = product;
   // console.log(images);
   return (
-    <div className=" mx-auto p-4 bg-white rounded-lg shadow-lg">
+    <div className=" mx-auto p-4 bg-white rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:bg-black hover:text-white">
       <div className="px-6 py-4 text-center">
-        <img
+        <Image
           style={{
             width: "100%",
             borderRadius: "10px",

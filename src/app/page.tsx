@@ -5,6 +5,7 @@ import Features from "@/components/home/Features/Features";
 import Gallery from "@/components/home/Gallery/Gallery";
 import NavBar from "@/components/shared/NavBar";
 import AboutUs from "@/components/ui/AboutUs/AboutUs";
+import BannerCard from "@/components/ui/BannerCard/BannerCard";
 import Facilities from "@/components/ui/Facilities/Facilities";
 import Footer from "@/components/ui/Footer/Footer";
 import Navbar from "@/components/ui/Navbar/Navbar";
@@ -38,6 +39,7 @@ export default function Home() {
       <PublicHeader />
       {/* <h1 className="text-l">This web application eLearning Platform</h1> */}
       <Banner />
+      <BannerCard />
       <Welcome />
       <Features />
       <AboutUs />

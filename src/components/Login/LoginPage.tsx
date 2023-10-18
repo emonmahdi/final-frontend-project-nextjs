@@ -22,7 +22,6 @@ type Inputs = {
 };
 
 const LoginPage = () => {
-  // console.log(isLoggedIn());
   const dispatch = useAppDispatch();
   const {
     register,
@@ -40,64 +39,15 @@ const LoginPage = () => {
     dispatch(loginUser({ email: data.email, password: data.password }));
   };
 
-  // const onSubmit = async (data: FormValues) => {
-  //   try {
-  //     // const res = await userLogin({ ...data }).unwrap();
-  //     // console.log(res);
-  //     // if (res?.accessToken) {
-  //     //   router.push("/profile");
-  //     // }
-  //     // storeUserInfo({ accessToken: res?.data?.accessToken });
-  //     // console.log(res);
-  //   } catch (err: any) {
-  //     console.log(err.message);
-  //   }
-  // };
-
   useEffect(() => {
-    if (user.email && !isLoading) {
+    if (user?.email && !isLoading) {
       router.push("/");
     }
-  }, [user.email, isLoading]);
+  }, [router, user?.email, isLoading]);
 
   return (
     <div>
       <PublicHeader />
-      {/* <section className="flex w-50 items-center justify-center h-screen font-poppins">
-        <div className="flex-1">
-          <div className="px-2 mx-auto max-w-5xl lg:px-4">
-            <div className="relative ">
-              <div className="relative px-4 py-4 bg-gray-100 shadow-md dark:bg-gray-900 md:py-11 sm:px-8">
-                <div className="max-w-lg mx-auto text-center">
-                  <a
-                    href="#"
-                    className="inline-block mb-4 text-blue-900 dark:text-gray-400 lg:mb-7 "
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="80"
-                      height="80"
-                      fill="currentColor"
-                      className="bi bi-person-circle"
-                      viewBox="0 0 16 16"
-                    >
-                      <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-                      <path
-                        fillRule="evenodd"
-                        d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"
-                      />
-                    </svg>
-                  </a>
-                  <h2 className="mb-4 text-2xl font-bold text-gray-700 lg:mb-7 md:text-5xl dark:text-gray-300">
-                    Login your account
-                  </h2>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> */}
-
       {/* ==================== */}
       <div className="bg-gray-100 min-h-screen flex items-center justify-center">
         <div className="container mx-auto flex items-center">
@@ -192,53 +142,6 @@ const LoginPage = () => {
         </div>
       </div>
     </div>
-    // <Row
-    //   justify="center"
-    //   align={"middle"}
-    //   style={{
-    //     minHeight: "100vh",
-    //   }}
-    // >
-    //   <Col sm={12} md={16} lg={10}>
-    //     <Image src={loginPage} width={500} alt="Login ai" />
-    //   </Col>
-    //   <Col sm={12} md={8} lg={8}>
-    //     <h1
-    //       style={{
-    //         margin: "15px 0px",
-    //       }}
-    //     >
-    //       First Login your account
-    //     </h1>
-    //     <div>
-    //       <Form submitHandler={onSubmit}>
-    //         <div>
-    //           <FormInput
-    //             name="id"
-    //             type="text"
-    //             size="large"
-    //             label="email or username"
-    //           />
-    //         </div>
-    //         <div
-    //           style={{
-    //             margin: "15px 0px",
-    //           }}
-    //         >
-    //           <FormInput
-    //             name="password"
-    //             type="password"
-    //             size="large"
-    //             label="user Password"
-    //           />
-    //         </div>
-    //         <Button type="primary" htmlType="submit">
-    //           Login
-    //         </Button>
-    //       </Form>
-    //     </div>
-    //   </Col>
-    // </Row>
   );
 };
 

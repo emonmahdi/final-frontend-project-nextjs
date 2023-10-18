@@ -1,6 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { reducer } from "./rootReducer";
-import { postApi } from "./api/postApi";
 import { setupListeners } from "@reduxjs/toolkit/query";
 import { baseApi } from "./api/baseApi";
 // ...

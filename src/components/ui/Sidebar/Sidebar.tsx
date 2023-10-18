@@ -40,7 +40,7 @@ const Sidebar = () => {
             display: "block",
           }}
         >
-          Hostil
+          Beyond Hotel
         </Link>
       </div>
       <Menu
