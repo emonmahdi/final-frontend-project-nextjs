@@ -15,17 +15,12 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
   const { user } = useAppSelector((state) => state.user);
   const router = useRouter();
 
-  // useEffect(() => {
-  //   if (!user?.email) {
-  //     router.push("/login");
-  //   } else {
-  //     router.push("/profile");
-  //   }
-  //   setIsLoading(true);
-  // }, [router]);
-
   if (!isLoading) {
     <p>Loading....</p>;
+  }
+
+  if (!user?.email) {
+    router.push("/login");
   }
 
   return (

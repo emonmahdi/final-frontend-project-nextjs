@@ -5,7 +5,7 @@ import Title from "antd/es/typography/Title";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { MenuOutlined } from "@ant-design/icons";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import auth from "@/firebase/firebase.auth";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useSignOut } from "react-firebase-hooks/auth";
@@ -48,9 +48,32 @@ const Navbar = ({
     setOpen(false);
   };
 
+  // sticky menu
+  const [isSticky, setIsSticky] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setIsSticky(true);
+      } else {
+        setIsSticky(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <Layout className="layout">
-      <Header className="flex justify-between place-items-center">
+      <Header
+        className={`flex justify-between place-items-center fixed top-0 left-0 w-full p-4 ${
+          isSticky ? "bg-[#3CAA9F] shadow-lg" : ""
+        } z-10`}
+      >
         <Content>
           <Link href="/">
             <Title
@@ -62,22 +85,30 @@ const Navbar = ({
               }}
             >
               {" "}
-              <span style={{ color: "#3CAA9F", fontWeight: "bold" }}>H</span>
+              {isSticky ? (
+                <span style={{ color: "#000", fontWeight: "bold" }}>H</span>
+              ) : (
+                <span style={{ color: "#3CAA9F", fontWeight: "bold" }}>H</span>
+              )}
               <span style={{ color: "#fff" }}>oteliya</span>
             </Title>
           </Link>
         </Content>
         <Menu
-          className="lg:block hidden "
+          className="lg:block hidden bg-transparent"
           disabledOverflow
-          theme="dark"
           mode="horizontal"
           selectedKeys={[items.find((item) => item.href === pathname)?.key!]}
         >
           {items?.map((item) => {
             return (
               <Menu.Item key={item.key}>
-                <Link href={item.href}>{item.label}</Link>
+                <Link
+                  href={item.href}
+                  style={{ color: "#fff", textDecoration: "none" }}
+                >
+                  {item.label}
+                </Link>
               </Menu.Item>
             );
           })}
@@ -86,19 +117,35 @@ const Navbar = ({
         {!user.email ? (
           <>
             <Link href="/login">
-              <button
-                className="hover:bg-black border-solid border-2 border-[#3CAA9F] hover:border-solid hover:border-2 hover:border-[#3CAA9F]"
-                style={{
-                  border: "none",
-                  background: "#3CAA9F",
-                  color: "#fff",
-                  padding: "10px 18px",
-                  fontSize: "16px",
-                  cursor: "pointer",
-                }}
-              >
-                Login
-              </button>
+              {!isSticky ? (
+                <button
+                  className="hover:bg-black border-solid border-2 border-[#3CAA9F] hover:border-solid hover:border-2 hover:border-[#3CAA9F]"
+                  style={{
+                    border: "none",
+                    background: "#3CAA9F",
+                    color: "#fff",
+                    padding: "10px 18px",
+                    fontSize: "16px",
+                    cursor: "pointer",
+                  }}
+                >
+                  Login
+                </button>
+              ) : (
+                <button
+                  className="bg-black border-solid border-2 border-[#3CAA9F] hover:border-solid hover:border-2 hover:border-[#000]"
+                  style={{
+                    border: "none",
+                    background: "#3CAA9F",
+                    color: "#fff",
+                    padding: "10px 18px",
+                    fontSize: "16px",
+                    cursor: "pointer",
+                  }}
+                >
+                  Login
+                </button>
+              )}
             </Link>
             <Link
               style={{
@@ -106,19 +153,35 @@ const Navbar = ({
               }}
               href="/signup"
             >
-              <button
-                className="hover:bg-black border-solid border-2 border-[#3CAA9F] hover:border-solid hover:border-2 hover:border-[#3CAA9F]"
-                style={{
-                  border: "none",
-                  background: "#3CAA9F",
-                  color: "#fff",
-                  padding: "10px 18px",
-                  fontSize: "16px",
-                  cursor: "pointer",
-                }}
-              >
-                Sign Up
-              </button>
+              {!isSticky ? (
+                <button
+                  className="hover:bg-black border-solid border-2 border-[#3CAA9F] hover:border-solid hover:border-2 hover:border-[#3CAA9F]"
+                  style={{
+                    border: "none",
+                    background: "#3CAA9F",
+                    color: "#fff",
+                    padding: "10px 18px",
+                    fontSize: "16px",
+                    cursor: "pointer",
+                  }}
+                >
+                  Sign Up
+                </button>
+              ) : (
+                <button
+                  className="bg-black border-solid border-2 border-[#3CAA9F] hover:border-solid hover:border-2 hover:border-[#000]"
+                  style={{
+                    border: "none",
+                    background: "#3CAA9F",
+                    color: "#fff",
+                    padding: "10px 18px",
+                    fontSize: "16px",
+                    cursor: "pointer",
+                  }}
+                >
+                  Sign Up
+                </button>
+              )}
             </Link>
           </>
         ) : (
