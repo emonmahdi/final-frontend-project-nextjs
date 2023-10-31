@@ -4,17 +4,20 @@ import Footer from "@/components/ui/Footer/Footer";
 import Navbar from "@/components/ui/Navbar/Navbar";
 import PublicHeader from "@/components/view/Header/PublicHeader";
 import { useSinglePostDataQuery } from "@/redux/api/postApi";
-import { useParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import React from "react";
 import { useState } from "react";
 import Loading from "../loading";
 import Image from "next/image";
+import { useAppSelector } from "@/redux/hooks";
 
 const HotelDetails = () => {
   const { id } = useParams(); // Use curly braces to destructure the id
   const { data, isLoading, isError } = useSinglePostDataQuery(id);
 
-  console.log("data", data);
+  const { user } = useAppSelector((state) => state.user);
+  const router = useRouter();
+
   if (isLoading) {
     return <div>Loading...</div>;
   }
@@ -26,6 +29,10 @@ const HotelDetails = () => {
         <Loading />
       </div>
     );
+  }
+
+  if (!user.email) {
+    router.push("/login");
   }
 
   const {
