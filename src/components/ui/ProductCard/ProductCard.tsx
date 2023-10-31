@@ -16,7 +16,7 @@ const ProductCard = ({ product }: any) => {
         <Image src={images} width={300} height={300} alt="hotel image" />
         <div className="text-start">
           <h2 className="font-bold text-xl mb-2">{title}</h2>
-          <p>{description.slice(0, 100)}</p>
+          {/* <p>{description.slice(0, 100)}</p> */}
           <div className="flex justify-between item-center">
             <div>
               <h4>{bed} Bed</h4>

@@ -6,6 +6,7 @@ import { Layout, Menu } from "antd";
 import { sidebarItems } from "@/constants/sidebarItems";
 import { USER_ROLE } from "@/constants/role";
 import Link from "next/link";
+import Title from "antd/es/typography/Title";
 const { Sider } = Layout;
 
 const Sidebar = () => {
@@ -28,19 +29,21 @@ const Sidebar = () => {
         bottom: 0,
       }}
     >
-      <div>
-        <Link
-          href="/"
-          style={{
-            color: "white",
-            fontSize: "2rem",
-            textAlign: "center",
-            fontWeight: "bold",
-            marginBottom: "1rem",
-            display: "block",
-          }}
-        >
-          Beyond Hotel
+      <div className="text-center my-6">
+        <Link href="/">
+          <Title
+            level={3}
+            style={{
+              display: "inline-block",
+              color: "white",
+              textAlign: "center",
+              marginBottom: 0,
+            }}
+          >
+            {" "}
+            <span style={{ color: "#3CAA9F", fontWeight: "bold" }}>H</span>
+            <span style={{ color: "#fff" }}>oteliya</span>
+          </Title>
         </Link>
       </div>
       <Menu

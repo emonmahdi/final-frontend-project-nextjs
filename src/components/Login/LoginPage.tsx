@@ -15,6 +15,7 @@ import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import PublicHeader from "../view/Header/PublicHeader";
 import { loginUser } from "@/redux/features/user/userSlice";
 import { useEffect } from "react";
+import MyButton from "../ui/Button/Button";
 
 type Inputs = {
   email: string;
@@ -60,14 +61,16 @@ const LoginPage = () => {
           </div>
           <div className="flex-1">
             <div className="p-8 bg-white rounded-lg shadow-md">
-              <h2 className="text-3xl font-semibold mb-4">Login</h2>
+              <h2 className="text-3xl font-semibold mb-4">
+                Login <span style={{ color: "#3CAA9F" }}>H</span>oteliya
+              </h2>
               <form onSubmit={handleSubmit(onSubmit)} className="mt-4 lg:mt-7 ">
                 <div className="">
                   {/* email input */}
                   <input
                     type="email"
                     {...register("email", { required: true })}
-                    className="w-full px-4 py-3 mt-2 bg-white rounded-lg lg:py-5 dark:text-gray-300 dark:bg-gray-700 -gray-800"
+                    className="w-full px-4 py-3 mt-2 bg-white rounded-lg lg:py-5"
                     name="email"
                     placeholder="Enter your email"
                   />
@@ -84,7 +87,7 @@ const LoginPage = () => {
                       <input
                         type="password"
                         {...register("password", { required: true })}
-                        className="w-full px-4 py-3 bg-white rounded-lg lg:py-5 dark:text-gray-300 dark:bg-gray-700 -gray-800"
+                        className="w-full px-4 py-3  rounded-lg lg:py-5"
                         name="password"
                         placeholder="Enter password"
                       />
@@ -110,28 +113,37 @@ const LoginPage = () => {
                   </span>
                 )}
                 <div className="flex flex-wrap items-center justify-between mt-4 lg:mt-7">
-                  <label htmlFor="" className="flex dark:text-gray-300">
+                  <label htmlFor="" className="flex">
                     <input type="checkbox" className="mt-1 mr-4" />
                     <span className="text-sm ">Remember me</span>
                   </label>
                   <a
                     href=" #"
-                    className="mt-2 text-sm font-semibold text-blue-500 lg:mt-0 dark:text-blue-300 hover:underline"
+                    className="mt-2 text-sm font-semibold text-blue-700 lg:mt-0  "
                   >
                     forgot password?{" "}
                   </a>
                 </div>
                 <button
-                  className="w-full py-3 text-lg font-bold text-gray-300 uppercase bg-blue-700 rounded-md lg:mt-7 mt-7 dark:text-gray-300 dark:bg-blue-700 px-11 md:mt-7 hover:bg-blue-900 dark:hover:bg-blue-900"
-                  type="submit"
+                  className="hover:bg-black"
+                  style={{
+                    width: "100%",
+                    background: "#3CAA9F",
+                    color: "#fff",
+                    padding: "15px 30px",
+                    border: "none",
+                    margin: "10px 0",
+                    cursor: "pointer",
+                    fontSize: "18px",
+                  }}
                 >
-                  LOGIN
+                  Login
                 </button>
-                <p className="mt-4 text-xs text-gray-700 lg:mt-7 dark:text-gray-400 lg:text-base">
+                <p className="mt-4 text-xs text-gray-700 lg:mt-7 dark:text-gray-600 lg:text-base">
                   Need an account?
                   <a
                     href="/signup"
-                    className="font-semibold text-blue-400 hover:text-blue-600 ml-1"
+                    className="font-semibold text-blue-700  hover:text-blue-600 ml-1"
                   >
                     Create an account
                   </a>

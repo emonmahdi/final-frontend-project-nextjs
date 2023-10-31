@@ -1,20 +1,28 @@
-"use client";
-
 import { Row } from "antd";
+
+import img from "./../assets/error.png";
+import Image from "next/image";
+import MyButton from "@/components/ui/Button/Button";
+import Link from "next/link";
 
 const NotFoundPage = () => {
   return (
     <>
-      <h1
+      <Row
+        justify={"center"}
+        align={"middle"}
         style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          fontSize: "40px",
+          height: "100vh",
         }}
       >
-        404! page not found....
-      </h1>
+        <Image src={img} width="400" height="400" alt="404 page " />
+        <br />
+        <div>
+          <Link href="/">
+            <MyButton>Back To Home</MyButton>
+          </Link>
+        </div>
+      </Row>
     </>
   );
 };

@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import { useEffect } from "react";
 import img from "./../../assets/sign.png";
 import Image from "next/image";
 import auth from "./../../firebase/firebase.auth";
@@ -8,6 +9,8 @@ import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { createUser } from "@/redux/features/user/userSlice";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
+import PublicHeader from "../view/Header/PublicHeader";
+import { useRouter } from "next/navigation";
 
 interface SignUpFormInputs {
   email: string;
@@ -24,6 +27,10 @@ const RegistrationPage = () => {
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth);
 
+  const { user: appUser, isLoading } = useAppSelector((state) => state.user);
+
+  const router = useRouter();
+
   const dispatch = useAppDispatch();
   const {
     register,
@@ -37,8 +44,15 @@ const RegistrationPage = () => {
     dispatch(createUser({ email: data?.email, password: data?.password }));
   };
 
+  useEffect(() => {
+    if (appUser?.email && !isLoading) {
+      router.push("/");
+    }
+  }, [router, appUser?.email, isLoading]);
+
   return (
     <>
+      <PublicHeader />
       {loading && <p>Loading...</p>}
       {error && <p style={{ color: "red" }}>{error.message}</p>}
       {user && <p style={{ color: "green" }}>User Registration successful!</p>}
@@ -46,13 +60,15 @@ const RegistrationPage = () => {
         <div className="container mx-auto flex items-center">
           <div className="flex-1">
             <div className="p-8 bg-white rounded-lg shadow-md">
-              <h2 className="text-3xl font-semibold mb-4">Register</h2>
+              <h2 className="text-3xl font-semibold mb-4">
+                Register <span style={{ color: "#3CAA9F" }}>H</span>oteliya
+              </h2>
               <form onSubmit={handleSubmit(onSubmit)} className="mt-4 lg:mt-7 ">
                 <div className="">
                   <input
                     type="text"
                     {...register("name", { required: true })}
-                    className="w-full px-4 py-3 mt-2 bg-white rounded-lg lg:py-5 dark:text-gray-300 dark:bg-gray-700 -gray-800"
+                    className="w-full px-4 py-3 mt-2 bg-white rounded-lg lg:py-5  "
                     name="name"
                     placeholder="Enter your name"
                   />
@@ -66,7 +82,7 @@ const RegistrationPage = () => {
                   <input
                     type="email"
                     {...register("email", { required: true })}
-                    className="w-full px-4 py-3 mt-2 bg-white rounded-lg lg:py-5 dark:text-gray-300 dark:bg-gray-700 -gray-800"
+                    className="border-1 w-full px-4 py-3 mt-2 bg-white rounded-lg lg:py-5  "
                     name="email"
                     placeholder="Enter your email"
                   />
@@ -82,7 +98,7 @@ const RegistrationPage = () => {
                       <input
                         type="password"
                         {...register("password", { required: true })}
-                        className="w-full px-4 py-3 bg-white rounded-lg lg:py-5 dark:text-gray-300 dark:bg-gray-700 -gray-800 "
+                        className="w-full px-4 py-3 bg-white rounded-lg lg:py-5  "
                         name="password"
                         placeholder="Enter password"
                       />
@@ -107,10 +123,20 @@ const RegistrationPage = () => {
                   </div>
                 </div>
                 <button
-                  className="w-full py-3 text-lg font-bold text-gray-300 uppercase bg-blue-700 rounded-md lg:mt-7 mt-7 dark:text-gray-300 dark:bg-blue-700 px-11 md:mt-7 hover:bg-blue-900 dark:hover:bg-blue-900"
-                  type="submit"
+                  className="hover:bg-black"
+                  style={{
+                    width: "100%",
+                    background: "#3CAA9F",
+                    color: "#fff",
+                    padding: "15px 30px",
+                    border: "none",
+                    margin: "10px 0",
+                    cursor: "pointer",
+                    fontSize: "18px",
+                    marginTop: "15px",
+                  }}
                 >
-                  REGISTER
+                  Register
                 </button>
                 <p className="mt-4 text-xs text-gray-700 lg:mt-7 dark:text-gray-400 lg:text-base">
                   already have an account?
