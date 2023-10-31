@@ -57,7 +57,13 @@ const HotelDetails = () => {
       <div className="lg:flex">
         {/* Hotel Details Section (2/3 of the layout) */}
         <div className="lg:w-2/3 p-4">
-          <Image src={images} alt="image" className="w-full h-auto" />
+          <Image
+            src={images}
+            width={400}
+            height={400}
+            alt="image"
+            className="w-full h-auto"
+          />
           <div className="flex justify-between items-center mt-4">
             <div>
               <h3>{price} / Per Night</h3>

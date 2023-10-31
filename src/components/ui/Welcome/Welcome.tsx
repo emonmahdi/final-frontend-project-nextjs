@@ -3,6 +3,7 @@ import hotelImg1 from "../../../assets/images/hotel-1.webp";
 import hotelImg from "../../../assets/images/hotel-2.webp";
 import Image from "next/image";
 import { Button } from "antd";
+import MyButton from "../Button/Button";
 
 const Welcome = () => {
   return (
@@ -30,7 +31,7 @@ const Welcome = () => {
                 </p>
               </div>
               <a href="tour-search.html" className="btn btn_theme btn_md ">
-                <Button type="primary">Find tours</Button>
+                <MyButton>Find tours</MyButton>
               </a>
             </div>
             <div className="bg-white rounded-lg p-4 w-2/3 welcome-img-part">

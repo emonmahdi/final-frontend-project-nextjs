@@ -3,6 +3,8 @@ import logo from "../../../assets/logo.png";
 import Image from "next/image";
 import { MailOutlined, PhoneOutlined } from "@ant-design/icons";
 import { Button, Input } from "antd";
+import Link from "next/link";
+import Title from "antd/es/typography/Title";
 
 const Footer = () => {
   return (
@@ -10,7 +12,13 @@ const Footer = () => {
       <footer className="bg-gray-900 text-gray-300 py-16 sm:px-5">
         <div className="flex flex-col lg:flex-row justify-center items-center  gap-56 p-0 sm:px-5">
           <div className="">
-            <Image src={logo} alt={""} className=" md:w-56 sm:w-28 " />
+            <Link href="/">
+              <Title level={3} style={{ color: "white", marginBottom: 0 }}>
+                {" "}
+                <span style={{ color: "#3CAA9F", fontWeight: "bold" }}>H</span>
+                <span style={{ color: "#fff" }}>oteliya</span>
+              </Title>
+            </Link>
             <p className="py-7">
               Amet minim mollit non deserunt ullamco est sit aliqua dolor do
               amet sint. Velit <br /> officia consequat duis enim velit.

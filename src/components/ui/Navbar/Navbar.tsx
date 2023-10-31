@@ -201,12 +201,14 @@ const Navbar = ({
   };
 
   return (
-    <Layout className="layout lg:px-36">
+    <Layout className="layout">
       <Header className="flex justify-between place-items-center">
         <Content>
           <Link href="/">
             <Title level={3} style={{ color: "white", marginBottom: 0 }}>
-              <Image src={logo} alt={""} className=" md:w-56 sm:w-28" />
+              {" "}
+              <span style={{ color: "#3CAA9F", fontWeight: "bold" }}>H</span>
+              <span style={{ color: "#fff" }}>oteliya</span>
             </Title>
           </Link>
         </Content>

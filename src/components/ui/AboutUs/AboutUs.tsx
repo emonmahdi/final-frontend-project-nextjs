@@ -1,6 +1,7 @@
 import Image from "next/image";
 import aboutImg from "../../../assets/images/about.png";
 import { Button } from "antd";
+import MyButton from "../Button/Button";
 
 const AboutUs = () => {
   return (
@@ -36,8 +37,8 @@ const AboutUs = () => {
                   sadipscing elitr{" "}
                 </p>
               </div>
-              <a href="tour-search.html" className="btn btn_theme btn_md">
-                <Button type="primary">Find tours</Button>
+              <a href="tour-search.html" className="btn btn_theme btn_md"> 
+                <MyButton>About More</MyButton>
               </a>
             </div>
           </div>
