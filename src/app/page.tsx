@@ -40,6 +40,7 @@ export default function Home() {
       {/* <h1 className="text-l">This web application eLearning Platform</h1> */}
       <Banner />
       <BannerCard />
+      <AboutUs />
       <Welcome />
       <Features />
       <AboutUs />

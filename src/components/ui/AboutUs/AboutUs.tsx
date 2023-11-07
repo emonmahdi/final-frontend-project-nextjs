@@ -1,5 +1,5 @@
 import Image from "next/image";
-import aboutImg from "../../../assets/images/about.png";
+import aboutImg from "../../../assets/home-img/about-img.jpg";
 import { Button } from "antd";
 import MyButton from "../Button/Button";
 
@@ -11,19 +11,25 @@ const AboutUs = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center justify-center">
             <div className="bg-white rounded-lg p-4 w-full sm:block hidden">
               <Image
-                style={{}}
+                style={{
+                  height: "500px",
+                  width: "500px",
+                  borderRadius: "50%",
+                }}
                 src={aboutImg}
                 alt="img"
                 className="md:w-80 lg:w-full"
               />
             </div>
             <div className="bg-white rounded-lg p-4">
-              <h2 className="text-xl font-semibold mb-2 text-blue-400">
-                About us
+              <h2 className="text-xl font-semibold mb-2 text-[#3CAA9F]">
+                The Hoteliya Luxury hotels
               </h2>
 
-              <div className="py-5">
-                <h2>We Are The World Best Travel Agency Company Since 2000</h2>
+              <div className="py-2">
+                <h2 className="mb-4 text-3xl">
+                  Find The Best Hotel For Accomodation.
+                </h2>
                 <p>
                   At vero eos et accusam et justo duo dolores et ea rebum. Stet
                   clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
@@ -37,9 +43,9 @@ const AboutUs = () => {
                   sadipscing elitr{" "}
                 </p>
               </div>
-              <a href="tour-search.html" className="btn btn_theme btn_md"> 
+              <div style={{ marginTop: "10px" }}>
                 <MyButton>About More</MyButton>
-              </a>
+              </div>
             </div>
           </div>
         </div>
