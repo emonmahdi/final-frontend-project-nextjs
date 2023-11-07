@@ -38,7 +38,7 @@ export default function Home() {
     <div>
       <PublicHeader />
       {/* <h1 className="text-l">This web application eLearning Platform</h1> */}
-      {/* <Banner /> */}
+      <Banner />
       <BannerCard />
       <Welcome />
       <Features />

@@ -1,11 +1,11 @@
 "use client";
 import { Button, Col, Input, Row } from "antd";
-import bannerImg from "../../../assets/banner-3.png";
-import Image from "next/image";
-import Search from "antd/es/input/Search";
+import "./Banner.css";
+import MyButton from "@/components/ui/Button/Button";
+
 const Banner = () => {
   return (
-    <div className=" bg-gray-900 lg:-mt-40 max-h-[800px]">
+    <div className="hoteliya-banner-section">
       <Row
         justify="center"
         align="middle"
@@ -14,25 +14,16 @@ const Banner = () => {
         }}
       >
         <Col xs={24} sm={24} md={12} lg={12} xl={12}>
-          <Image
-            src={bannerImg}
-            className="w-full max-w-[500px] h-auto lg:-mb-60  lg:bg-white rounded-xl shadow-sm md:p-3"
-            alt="banner"
-          />
-        </Col>
-        <Col sm={12} md={11} lg={8} xs={{ span: 22, offset: 0 }}>
-          <h1 className="text-5xl font-bold text-yellow-50 mt-16 ">
-            Book our Hotels, Stays for your next tour.
-          </h1>
-          <p className="my-8 text-lg text-yellow-50">
-            shapesshapes Book our Hotels, Stays for your next tour Amet minim
-            mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit
-            officia consequat duis enim.
+          <div className="title-tag">Welcome to Hoteliya</div>
+          <h1 className="main-title">Enjoy Your Vacation.</h1>
+          <p className="sub-title">
+            Hotel ut nisl quam nestibulum ac quam nec odio elementum sceisuen
+            the aucan ligula. mus nellentesque habitant forminy morbine odio
+            elementum sceisuen the aucan ligula mus nellentesque morbine .
           </p>
-          <div style={{}}>
-            <Search placeholder="Search..." enterButton size="large" />
-          </div>
+          <MyButton>Room & Suites</MyButton>
         </Col>
+        <Col sm={12} md={11} lg={8} xs={{ span: 22, offset: 0 }}></Col>
       </Row>
     </div>
   );

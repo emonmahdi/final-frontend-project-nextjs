@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 
 import Contents from "@/components/Contents/Contents";
@@ -10,7 +11,7 @@ import { useEffect, useState } from "react";
 const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
   // const items = [{ key: "1", label: "Home", href: "/" }];
 
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
   const { user } = useAppSelector((state) => state.user);
   const router = useRouter();
 
