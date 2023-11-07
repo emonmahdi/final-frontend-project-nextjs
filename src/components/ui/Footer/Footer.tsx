@@ -5,11 +5,12 @@ import { MailOutlined, PhoneOutlined } from "@ant-design/icons";
 import { Button, Input } from "antd";
 import Link from "next/link";
 import Title from "antd/es/typography/Title";
+import MyButton from "../Button/Button";
 
 const Footer = () => {
   return (
     <>
-      <footer className="bg-gray-900 text-gray-300 py-16 sm:px-5">
+      <footer className="bg-[#001529] text-gray-300 py-16 sm:px-5">
         <div className="flex flex-col lg:flex-row justify-center items-center  gap-56 p-0 sm:px-5">
           <div className="">
             <Link href="/">
@@ -63,9 +64,7 @@ const Footer = () => {
                 placeholder="Enter Your Email"
                 className="rounded-2xl p-3 bg-white border-orange-500"
               />
-              <Button className="rounded-xl bg-orange-500 text-white font-bold">
-                Primary
-              </Button>
+              <MyButton>Send</MyButton>
             </div>
           </div>
         </div>

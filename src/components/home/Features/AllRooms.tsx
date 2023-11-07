@@ -31,7 +31,11 @@ const AllRooms = () => {
     }
   );
   return (
-    <div>
+    <div
+      style={{
+        padding: "60px 0",
+      }}
+    >
       <div>
         <div className="grid grid-cols-12 max-w-7xl mx-auto relative mt-4">
           {/* Search Bar (1/3 part) */}
