@@ -17,7 +17,7 @@ const Features = () => {
       <h2 style={{ textAlign: "center" }} className="text-2xl py-3">
         This is Features Service
       </h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 px-28">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
         {data?.data?.map((product: any) => {
           return (
             <ProductCard
