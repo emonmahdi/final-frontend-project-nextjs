@@ -1,36 +1,53 @@
 import Footer from "@/components/ui/Footer/Footer";
-import { RightOutlined } from "@ant-design/icons";
-import Link from "next/link";
 import React from "react";
+
+import "./about-us.css";
+import Link from "next/link";
 
 const AboutPage = () => {
   return (
     <>
-      <div>
-        <div className="flex justify-center bg-[#D2E0FB] py-10 mt-5">
-          <div className="flex justify-between items-center w-full lg:w-[70%] mx-3 lg:m-0 bg-slate-100 px-5 py-3 rounded-xl">
-            <h2 className="text-2xl">About Us</h2>
-            <div className="flex justify-center items-center gap-3">
-              <Link href={"/"}>Home</Link>
-              <p>
-                <RightOutlined />
-              </p>
-              <p>About</p>
-            </div>
-          </div>
+      <div
+        className="about-us-section"
+        style={{
+          padding: "60px 0",
+        }}
+      >
+        <div className="section-top-title-about">
+          <h2>About US</h2>
+          <ul>
+            <li>
+              <Link
+                href="/"
+                style={{
+                  color: "#fff",
+                  textDecoration: "none",
+                  fontWeight: "bold",
+                  cursor: "pointer",
+                }}
+              >
+                Home
+              </Link>{" "}
+            </li>
+            <li style={{ textDecoration: "underline", fontWeight: "bold" }}>
+              About US
+            </li>
+          </ul>
         </div>
-
-        <div className="flex justify-center mt-10 ">
-          <div className="text-center mt-10 w-full lg:w-[30%]">
-            <h2 className="text-2xl">About Beyond Hotel</h2>
-            <p className="text-center py-5 text-xl font-thin text-slate-500 ">
-              But I must explain to you how all this mistake idea of denouncing
-              pleasure and praising pain was born and I will give you a complete
-              account of the system, and expound the actual teachings of the
-              great explorer of the truth, the master-builder of human
-              happiness.
-            </p>
-          </div>
+        {/* why choose us */}
+        <div className="container px-12 py-12">
+          <h2>Why Choose Us</h2>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi ut
+            error in iure magni hic nostrum, non incidunt consequatur similique
+            nemo iusto voluptatem quidem dolorem itaque officiis veniam
+            exercitationem numquam?. Lorem ipsum dolor sit, amet consectetur
+            adipisicing elit. Autem corrupti, omnis blanditiis minus vero
+            similique ipsum. Facilis nemo quam itaque tenetur fugiat similique
+            officia optio unde minima vitae? Laudantium quis animi eius ratione
+            magnam, facere nisi, ex natus similique recusandae eveniet, vel
+            provident alias distinctio sint sit. Itaque, eum eaque.
+          </p>
         </div>
       </div>
       <Footer />

@@ -18,9 +18,9 @@ const ProductCard = ({ product }: any) => {
         <div className="hotel-img">
           <Image
             src={images}
-            width={300}
+            width={320}
             className="rounded-lg"
-            height={300}
+            height={320}
             alt="hotel image"
           />
         </div>

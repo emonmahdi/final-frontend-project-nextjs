@@ -9,16 +9,19 @@ const AboutUs = () => {
       <section>
         <div className="container mx-auto py-10">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center justify-center">
-            <div className="bg-white rounded-lg p-4 w-full sm:block hidden">
+            <div className="bg-white rounded-lg p-4 w-full text-center sm:block hidden">
               <Image
                 style={{
-                  height: "500px",
-                  width: "500px",
+                  height: "400px",
+                  width: "400px",
+                  lineHeight: "400px",
                   borderRadius: "50%",
+                  border: "6px solid #3CAA9F",
+                  padding: "10px",
                 }}
                 src={aboutImg}
                 alt="img"
-                className="md:w-80 lg:w-full"
+                className=""
               />
             </div>
             <div className="bg-white rounded-lg p-4">

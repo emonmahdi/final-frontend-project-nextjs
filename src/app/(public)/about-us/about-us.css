@@ -1,0 +1,38 @@
+.section-top-title-about {
+  /* background: url("../../../assets/about/title.jpg");
+   */
+  background-color: #001529;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  height: 200px;
+  width: 100%;
+  position: relative;
+  padding: 70px 0;
+  color: "#fff";
+  text-align: center;
+  border: 4px solid #fff;
+  overflow: hidden;
+  margin-top: 7px;
+}
+.section-top-title-about::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  /* background-color: rgba(0, 0, 0, 0.7); */
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+}
+.section-top-title-about {
+}
+.section-top-title-about h2 {
+  color: #fff;
+}
+.section-top-title-about ul li {
+  list-style: none;
+  display: inline-block;
+  padding: 10px 20px;
+  color: #fff;
+}
